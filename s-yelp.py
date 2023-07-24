@@ -102,6 +102,6 @@ def scrape_restaurants(zip_codes, page_limit):
 zip_codes = [11201]
 
 # 24 page for each zip code
-page_limit = 10
+page_limit = 240
 
 scrape_restaurants(zip_codes, page_limit)

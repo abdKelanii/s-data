@@ -14,14 +14,10 @@ addresses = []
 
 page_number = 0
 page_limit = 240
-zip_codes = [11201, 11203, 11204, 11205, 11206, 11207, 11208, 11209, 11210, 11211,
-                11212, 11213, 11214, 11215, 11216, 11217, 11218, 11219, 11220, 11221,
-                11222, 11223, 11224, 11225, 11226, 11228, 11229, 11230, 11231, 11232,
-                11233, 11234, 11235, 11236, 11237, 11238, 11239 ]
 
 while True:
     # Use requests to fetch the rul
-    result = requests.get(f"https://www.yelp.com/search?find_desc=Restaurants&find_loc={zip_codes}&start={page_number}")
+    result = requests.get(f"https://www.yelp.com/search?find_desc=Restaurants&find_loc=&start={page_number}")
 
     # Save page content
     src = result.content
