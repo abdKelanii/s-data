@@ -92,6 +92,7 @@ def scrape_restaurants(zip_codes, page_limit):
     file_list = [rest_name, links, websites, phone_numbers, addresses, IsClaimed, foodTypes, rates, reviews, Time]
     exported = zip(*file_list)
 
+    # DON'T FORGET TO CHANGE THE FILE PATH
     file_path = "/Users/abdulsalamhijazikelani/Desktop/output.csv"
     with open(file_path, "w") as output:
         writer = csv.writer(output)
