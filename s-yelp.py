@@ -86,7 +86,7 @@ def scrape_restaurants(zip_codes, page_limit):
             print(f"Error fetching content from {link}: {e}")
 
         # Random Delay between 1, 5
-        # delay_between_requests = random.uniform(1, 5)
+        delay_between_requests = random.uniform(1, 5)
         time.sleep(delay_between_requests)
 
     file_list = [rest_name, links, websites, phone_numbers, addresses, IsClaimed, foodTypes, rates, reviews, Time]
