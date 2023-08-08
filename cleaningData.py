@@ -45,7 +45,7 @@ for excel_file in excel_files:
 
     df['Time'] = df['Time'].str.replace('Open now:', '').str.replace('Closed now: See all hours', '').str.strip()
     df['Time'] = df['Time'].str.replace('Closed now:  See all hours', '').str.strip()
-    df['Time'] = df['Time'].apply(lambda x: '' if pd.isna(x) or 'Opens in' in x else x)
+    df['Time'] = df['Time'].apply(lambda x: '' if pd.isna(x) or 'See all hours' in x else x)
 
     if 'Price Range' in df.columns:
         df.drop(columns=['Price Range'], inplace=True)
