@@ -3,8 +3,7 @@ import os
 import re
 
 # Change the folder directory
-folder_path = '~/Desktop/parsing-data/'
-
+folder_path = '~/Desktop'
 
 excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
 
@@ -22,8 +21,11 @@ for excel_file in excel_files:
     df['PRICE RANGE'] = df['Details'].apply(lambda x: extract_details(x, "PRICE RANGE"))
     df['CUISINES'] = df['Details'].apply(lambda x: extract_details(x, "CUISINES"))
     df['MEALS'] = df['Details'].apply(lambda x: extract_details(x, "Meals"))
+    df['SPECIAl_DIETS'] = df['Details'].apply(lambda x: extract_details(x, "SPECIAl DIETS"))
+    df['FEATURES'] = df['Details'].apply(lambda x: extract_details(x, "FEATURES"))
 
     df['PRICE RANGE'] = df['PRICE RANGE'].str.split("CUISINES", expand=True)[0].str.strip()
+    df['MEALS'] = df['MEALS'].str.split("FEATURES", expand=True)[0].str.strip()
     df['CUISINES'] = df['CUISINES'].str.split("Meals", expand=True)[0].str.strip()
 
     columns_to_drop = ['web-scraper-order', 'web-scraper-start-url', 'links', 'links-href']
