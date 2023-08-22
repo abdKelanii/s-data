@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Change the folder directory
-folder_path = '~/Desktop/reviews'
+folder_path = '/Users/abdulsalamhijazikelani/Desktop/test'
 
 columns_to_drop = ['web-scraper-order', 'web-scraper-start-url', 'links-href']
 
