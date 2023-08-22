@@ -3,7 +3,7 @@ import os
 import re
 
 # Change the folder directory
-folder_path = '~/Desktop'
+folder_path = '/Users/abdulsalamhijazikelani/Desktop/test'
 
 excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
 
